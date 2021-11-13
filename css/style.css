@@ -1,0 +1,88 @@
+/*
+    created at 31/05/2021
+    by Otávio Da Silva Marin
+*/
+
+.imglogin {
+    /*border-radius: 50%;*/
+    width: 582px;
+    height: 115px;
+    overflow: hidden;
+    position: relative;
+}
+
+.textstyle{
+    color: rgb(240, 240, 240);
+}
+
+.imgnavbarlogo{
+    width: 116px;
+    height: 23px;
+    overflow: hidden;
+    position: relative;
+    float: left;
+}
+
+.mainstyle {
+    background: rgb(39, 45, 59);
+    color: rgb(240, 240, 240);
+    font-size: 15px;
+    border-radius: 5%;
+}
+
+.lpminiicon {
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+}
+.perfbigicon {
+    border-radius: 50%;
+    width: 128px;
+    height: 128px;
+    overflow: hidden;
+    position: relative;
+}
+
+.tabicon{
+    width: 16px;
+    height: 16px;
+}
+
+.estilomedio{
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 50%;
+}
+
+.divtable{
+    height: 250px;
+    overflow: auto;
+}
+.restable{
+    max-height: 165px;
+    overflow: auto;
+}
+
+.controlicon{
+    height: 32px;
+    width: 32px;
+}
+
+.form-control{
+    background: rgb(39, 45, 59);
+    color: rgb(240, 240, 240);
+}
+
+.cardbuttons{
+    width: 50px;
+    height: 25px;
+}
+
+.buttonnumber{
+    float: right;
+    clear: both;
+}
