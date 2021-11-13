@@ -53,7 +53,6 @@ function pesqStart(){
         console.log('AÍ SIM ARROMBS');
     }else{
         contit.value='';
-        console.log('SEU CU');
         $('.toast').toast({animation : true, autohide : true, delay : 500});
     }
 }
