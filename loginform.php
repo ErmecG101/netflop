@@ -58,7 +58,8 @@ include 'config/menu.php';
                         <input type="password" class="form-control" name="ususen" id="ususen" placeholder="********" aria-label="Username" aria-describedby="basic-addon1">
                     </div><br>
                     <h5><input type="submit" class="btn btn-info" name="usubtn" value="Logar"></h5>
-                    Não tem uma conta? <a href="accform.php">clique aqui!</a>
+                    Não tem uma conta? <a href="accform.php">clique aqui!</a><br>
+                    <a href="#">Esqueci a minha senha</a>
                 </div>
                 <div class="col-md-3"></div>
             </div>

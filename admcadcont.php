@@ -18,6 +18,8 @@ if ((isset($_SESSION['acao'])) && ($_SESSION['acao'] == 'editar')) {
 if(isset($_SESSION['status'])){
     if($_SESSION['status'] == 'camposvazios'){
         echo '<br> <div class="container-fluid"><div class="alert alert-warning" role="alert">Campo vazio detectado na sua operação.</div></div>';
+    }else if($_SESSION['status'] == 'falho'){
+        echo '<br> <div class="container-fluid"><div class="alert alert-danger" role="alert">Ocorreu um erro na sua operação, por favor tente novamente.</div></div>';
     }
     unset($_SESSION['status']);
 }

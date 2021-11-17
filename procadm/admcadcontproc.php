@@ -21,7 +21,7 @@ if (!$tit || !$dur || !$eps || !$sip || !$aut || !$notimdb || !$img || !$_FILES[
             $_FILES['conimg']['name'] = $tit . '.png';
             $uploadfile = $uploaddir . basename($_FILES['conimg']['name']);
             if ((move_uploaded_file($_FILES['conimg']['tmp_name'], $uploadfile))) {
-                $_SESSION['diretorio'] = 'sucesso';
+                $_SESSION['status'] = 'sucesso';
                 $img = "dir/$tit/" . basename($_FILES['conimg']['name']);
                 //header('Location: ../index.php');
             }
@@ -43,7 +43,7 @@ if (!$tit || !$dur || !$eps || !$sip || !$aut || !$notimdb || !$img || !$_FILES[
             mkdir($uploaddir, 0777, true);
         }
         if ((move_uploaded_file($_FILES['conimg']['tmp_name'], $uploadfile))) {
-            $_SESSION['diretorio'] = 'sucesso';
+            $_SESSION['status'] = 'sucesso';
             $img = "dir/$tit/" . basename($_FILES['conimg']['name']);
             $queryinsert = "insert into conteudos(contit,conimg,condur,coneps,consip,conaut,connotimdb)
                         values('$tit','$img','$dur','$eps','$sip','$aut','$notimdb')";
@@ -51,7 +51,7 @@ if (!$tit || !$dur || !$eps || !$sip || !$aut || !$notimdb || !$img || !$_FILES[
             include "../processos/conttratcheck.php";
             header('Location: ../index.php');
         } else {
-            $_SESSION['diretorio'] = 'falho';
+            $_SESSION['status'] = 'falho';
             echo "falho";
             print_r($_FILES['conimg']);
             header("Location: ../admcadcont.php");
