@@ -68,7 +68,7 @@ if (isset($_GET['pescontit'])) {
 
                     <!--Referencia da imagem-->
                     <a href="<?php if (isset($usunom)) {
-                                    echo "javascript:popupOpenPer();";
+                                    echo "perfils.php";
                                 } else {
                                     echo "loginform.php";
                                 } ?>"><img src="<?php if (isset($usunom)) {
