@@ -18,6 +18,12 @@ include 'config/menu.php';
                             echo '<br> <div class="alert alert-danger" role="alert">Um ou mais campos vazios ou preenchidos de forma indevida</div>';
                             $_SESSION['camposvazios'] = 0;
                         }
+                        if((isset($_SESSION['status']))){
+                            if($_SESSION['status'] == 'erro'){
+                            echo '<div class="alert alert-warning" role="alert">Esse Email já existe ou ocorreu um erro na sua operação.</div>';
+                            }
+                            unset($_SESSION['status']);
+                        }
                     ?>
                     <img src="img/loginlogo.png" class="imglogin img-fluid mx-auto d-block"/>
                     <br><br><br>

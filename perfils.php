@@ -26,13 +26,13 @@ $x = 0;
 $y = mysqli_num_rows($result);
 
 ?>
-
+<script type="text/javascript" src="./JS/perfilbtn.js"></script>
 <div class="container">
     <div class="row">
         <?php
         include "./processos/listperfis.php";
         ?>
-        <div class="card-dark" style="background-color: rgb(45, 51, 70); width: 15rem;">
+        <div class="card-dark" style="background-color: rgb(45, 51, 70); width: 15rem;"><br>
             <center><img src="./img/opa.png" class="perfbigicon card-img-top" alt="..."></center>
             <div class="card-body">
                 <center>

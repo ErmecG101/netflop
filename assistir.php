@@ -34,7 +34,7 @@ include './processos/epverify.php';
                 }
             unset($_SESSION['status']);
             }?>
-            <video autoplay id="myvid" width="100%" src="<?php echo './dir/' . $contit . '/' . $dirtemp . '/' . $direp . '.mp4' ?>" muted></video>
+            <video onclick="javascript:playPause()" autoplay id="myvid" width="100%" src="<?php echo './dir/' . $contit . '/' . $dirtemp . '/' . $direp . '.mp4' ?>" muted></video>
             <table class="table table-borderless table-dark">
                 <input type="range" class="form-range" id="videoProg" oninput="setTime()">
                 <thead>

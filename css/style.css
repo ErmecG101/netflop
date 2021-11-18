@@ -86,3 +86,11 @@
     float: right;
     clear: both;
 }
+
+.perfilbtn{
+    width: 216px;
+    height: 38px;
+    position: inherit;
+    overflow-x: auto;
+    overflow-y: auto;
+}

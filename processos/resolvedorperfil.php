@@ -33,7 +33,14 @@ if (isset($_POST['btnselper'])) { //SELEÇÃO
         if($_FILES['perpfp']['tmp_name']){
             include_once "uploadperfil.php";
         }else{
-            $perpfp = "dir/perfil/".$_SESSION['usunom']."/".$_POST['btnfinedit'].".png";
+            $selectdir = 'select * from perfil where percod = '.$_POST['btnfinedit'];
+            $resultdir = mysqli_query($connect, $selectdir);
+            $ln_perdir = mysqli_fetch_assoc($resultdir);
+            if($ln_perdir['perpfp'] == 'img/defaulticon.png'){
+                $perpfp = 'img/defaulticon.png';
+            }else{
+                $perpfp = "dir/perfil/".$_SESSION['usunom']."/".$_POST['btnfinedit'].".png";
+            }
         }
         if (isset($_POST['perkid'])) {
             $perkid = 1;
@@ -59,7 +66,7 @@ if (isset($_POST['btnselper'])) { //SELEÇÃO
         $resultdelres = mysqli_query($connect,$querydelres);
         $query = "delete from perfil where percod = '$percod'";
         $result = mysqli_query($connect, $query);
-        header('Location: ../index.php');
+        header('Location: ../perfils.php');
     } else {
         $_SESSION['status'] = 'Erro';
         header('Location: ../perfils.php');
