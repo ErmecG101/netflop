@@ -50,10 +50,8 @@ function pesqStart(){
     if(regex.exec(contit.value)){
         console.log(contit.value);
         document.location = 'pesqcon.php?pescontit='+contit.value;
-        console.log('AÍ SIM ARROMBS');
     }else{
-        contit.value='';
-        $('.toast').toast({animation : true, autohide : true, delay : 500});
+        alert("Texto com caracteres especiais não permitido.");
     }
 }
 

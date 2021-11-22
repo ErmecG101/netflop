@@ -62,15 +62,15 @@ if ($_GET) {
             <h1 style="text-align: center;">Descubra seus novos favoritos:</h1>
             <div id="carouselExampleControls1" data-interval="false" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="container-fluid  ml-5 mr-5">
+                    <div class="container-fluid  ml-3 mr-3">
                         <?php include './processos/Viewsconteudos/congenerico.php' ?>
                     </div>
                 </div>
-                <a class="carousel-control-prev"  href="#carouselExampleControls1" role="button" data-slide="prev">
+                <a class="carousel-control-prev"  style="width: 10%;" href="#carouselExampleControls1" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Anterior</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+                <a class="carousel-control-next" style="width: 10%;" href="#carouselExampleControls1" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Próximo</span>
                 </a>
@@ -80,7 +80,7 @@ if ($_GET) {
             <h1 style="text-align: center;">De acordo com os seus gostos:</h1>
             <div id="carouselExampleControls" data-interval="false" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <div class="container-fluid  ml-5 mr-5">
+                    <div class="container-fluid  ml-3 mr-3">
                         <?php if (isset($_SESSION['percod'])) {
                             include './processos/Viewsconteudos/congost.php';
                         } else {
@@ -92,11 +92,11 @@ if ($_GET) {
                         } ?>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <a class="carousel-control-prev" style="width: 10%;" href="#carouselExampleControls" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="sr-only">Anterior</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <a class="carousel-control-next" style="width: 10%;" href="#carouselExampleControls" role="button" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Próximo</span>
                 </a>

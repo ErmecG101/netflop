@@ -4,10 +4,11 @@ include '../config/conexao.php';
 
 $usunom = filter_input(INPUT_POST, 'usunom');
 $ususen = filter_input(INPUT_POST, 'ususen');
+$ususenconf = filter_input(INPUT_POST, 'ususenconf');
 $usuemail = filter_input(INPUT_POST, 'usuemail');
 $usucel = filter_input(INPUT_POST, 'usucel');
 
-if (($usunom == '') || ($ususen == '') || ($usuemail == '') || ($usucel == '')) {
+if ((($usunom == '') || ($ususen == '') || ($usuemail == '') || ($usucel == '')) || ($ususen != $ususenconf)) {
     $_SESSION['camposvazios'] = 1;
     header('Location: ../accform.php');
 } else {
