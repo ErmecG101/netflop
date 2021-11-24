@@ -9,7 +9,7 @@
 	$admfunccel = $_GET['admfunccel'];
 
 	$queryi = "INSERT INTO adm(admnom,admsen,admemail,admfunc,admfunccel)VALUES('$admnom',md5('$admsen'),'$admemail','$admfunc','$admfunccel');";
-	$queryu = "UPDATE adm SET admnom='$admnom',admsen='$admsen',admemail='$admemail',admfunc='$admfunc',admfunccel='$admfunccel' WHERE admcod = '$admcod';";
+	$queryu = "UPDATE adm SET admnom='$admnom',admsen=md5('$admsen'),admemail='$admemail',admfunc='$admfunc',admfunccel='$admfunccel' WHERE admcod = '$admcod';";
 	$queryd = "DELETE FROM adm WHERE admcod='$admcod';";
 	$querys = "SELECT * FROM adm WHERE admnom like '%$admnom%';";
 	$querysl = "SELECT * FROM adm WHERE admemail = '$admemail' AND admsen =md5('$admsen');";

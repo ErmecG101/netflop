@@ -12,10 +12,11 @@
 
  $queryi = "INSERT INTO conteudos(contit,conimg,condur,coneps,consip,conaut,connotimdb)VALUES('$contit','$conimg','$condur','$coneps','$consip','$conaut','$connotimdb');";
  $queryu = "UPDATE conteudos SET contit='$contit',conimg='$conimg',condur='$condur',coneps='$coneps',consip='$consip',conaut='$conaut',connotimdb='$connotimdb';";
- $queryd = "DELETE FROM conteudos WHERE concod='$concod'; DELETE FROM resenhas WHERE codcon='$concod';
-             DELETE FROM diretorios WHERE codcon='$concod'; DELETE FROM gencon WHERE codcon='$concod';";
+ $queryd = "DELETE FROM resenhas WHERE codcon='$concod'; DELETE FROM diretorios WHERE codcon='$concod';
+            DELETE FROM gencon WHERE codcon='$concod'; DELETE FROM conteudos WHERE concod='$concod';";
  $querys = "SELECT * FROM conteudos";
  $querysl = "SELECT * FROM conteudos WHERE contit LIKE '%$contit%';";
+ $queryc = "SELECT * FROM conteudos WHERE concod = '$concod';";
 
  if (($op == 'i') || ($op == 'I')) {
      $result = mysqli_query($connect, $queryi);
@@ -33,6 +34,11 @@
  } else if (($op == 'sl')||($op == 'SL')) {
 	 $result = mysqli_query($connect, $querysl);
      $listas = mysqli_fetch_all($result, MYSQLI_ASSOC);
+     echo json_encode($listas);
+ }
+ else if ($op == 'c') {
+	$result = mysqli_query($connect, $queryc);
+ $listas = mysqli_fetch_all($result, MYSQLI_ASSOC);
      echo json_encode($listas);
  }
 ?>

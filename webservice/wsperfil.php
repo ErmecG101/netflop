@@ -8,8 +8,9 @@ $perpfp = $_GET['perpfp'];
 $codusu = $_GET['codusu'];
 
 $queryi = "INSERT INTO perfil(pernom,perkid,perpfp,codusu)VALUES('$pernom','perkid','$perpfp','$codusu');";
-$queryu = "UPDATE perfil SET pernom = '$pernom', perkid = '$perkid', perpfp = '$perpfp', codusu = 'codusu';";
-$queryd = "DELETE FROM perfil WHERE percod='$percod'; DELETE FROM gengost WHERE codper='$percod'";
+$queryu = "UPDATE perfil SET pernom = '$pernom', perkid = '$perkid', perpfp = '$perpfp' WHERE percod = $percod;";
+$queryd = "DELETE FROM gengost WHERE codper='$percod'; DELETE FROM resenhas WHERE codper = '$percod';
+DELETE FROM perfil WHERE percod='$percod';";
 $querys = "SELECT * FROM perfil";
 $querysl= "SELECT p.percod, gg.codper, FROM perfil AS p INNER JOIN gengost AS gg INNER JOIN usuarios AS u WHERE p.percod = gg.codper AND p.codusu = u.usucod;";
 $queryp = "SELECT * FROM perfil WHERE codusu ='$codusu';";

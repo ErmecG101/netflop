@@ -25,7 +25,6 @@ if ($numrowprox == 0) {
         echo "<input type='hidden' id='valorprox' name='valor' value='$prox'>";
     }
 } else {
-
     echo "<input type='hidden' id='avancar' name='avancar' value='ep'>";
     echo "<input type='hidden' id='valorprox' name='valor' value='$prox'>";
 }

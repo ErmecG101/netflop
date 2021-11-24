@@ -6,7 +6,8 @@ $gennom = $_GET['gennom'];
 
 $queryi = "INSERT INTO generos(gennom)VALUES('$gennom');";
 $queryu = "UPDATE generos SET gennom = '$gennom' WHERE gencod = '$gencod';";
-$queryd = "DELETE FROM gencon WHERE codgen = '$gencod';DELETE FROM gengost WHERE codgen = '$gencod';DELETE FROM generos WHERE gencod = '$gencod';";
+$queryd = "DELETE FROM gencon WHERE codgen = '$gencod'; DELETE FROM gengost WHERE codgen = '$gencod';
+DELETE FROM generos WHERE gencod = '$gencod';";
 $querys = "SELECT * FROM generos";
 $querysl = "SELECT * FROM generos WHERE gennom = '$gennom';";
 

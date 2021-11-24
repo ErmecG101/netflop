@@ -6,10 +6,15 @@
 	$ususen = $_GET['ususen'];
 	$usuemail = $_GET['usuemail'];
 	$usucel = $_GET['usucel'];
+	$query = "SELECT * FROM usuarios WHERE usucod = '$usucod'";
+	$result = mysqli_query($connect,$query);
+	$ln = mysqli_fetch_assoc($result);
+	$percod = $ln['percod'];
 	
-	$queryi = "INSERT INTO usuarios(usunom,ususen,usuemail,usucel)VALUES('$usunom','$ususen','$usuemail','$usucel');";
+	$queryi = "INSERT INTO usuarios(usunom,ususen,usuemail,usucel)VALUES('$usunom',md5('$ususen'),'$usuemail','$usucel');";
 	$queryu = "UPDATE usuarios SET usunom='$usunom', ususen='$ususen', usuemail='$usuemail', usucel='$usucel' WHERE usucod = '$usucod';";
-	$queryd = "DELETE FROM perfil WHERE codusu='$usucod'; DELETE FROM usuarios WHERE usucod='$usucod';";
+	$queryd = "DELETE FROM gengost WHERE codper='$percod'; DELETE FROM resenhas WHERE codper = '$percod';
+	DELETE FROM perfil WHERE codusu='$usucod'; DELETE FROM usuarios WHERE usucod='$usucod';";
 	$querys = "SELECT * FROM usuarios";
 	$querysl = "SELECT * FROM usuarios WHERE usuemail='$usuemail' AND ususen=md5('$ususen');";
 	$queryse = "SELECT * FROM usuarios WHERE usuemail = '$usuemail'";
@@ -21,7 +26,7 @@
 		$result = mysqli_query($connect, $queryu);
 		echo $result;
 	} else if (($op == 'd') || ($op == 'D')) {
-		$result = mysqli_query($connect, $queryd);
+		$result = mysqli_query(	$connect, $queryd);
 		echo $result;
 	} else if (($op == 's') || ($op == 'S')) {
 		$result = mysqli_query($connect, $querys);
