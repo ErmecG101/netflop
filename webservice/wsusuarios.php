@@ -9,7 +9,12 @@
 	$query = "SELECT * FROM usuarios WHERE usucod = '$usucod'";
 	$result = mysqli_query($connect,$query);
 	$ln = mysqli_fetch_assoc($result);
-	$percod = $ln['percod'];
+	
+	if(isset($ln['percod'])){
+		$percod = $ln['percod'];
+	}else{
+		$percod='';
+	}
 	
 	$queryi = "INSERT INTO usuarios(usunom,ususen,usuemail,usucel)VALUES('$usunom',md5('$ususen'),'$usuemail','$usucel');";
 	$queryu = "UPDATE usuarios SET usunom='$usunom', ususen='$ususen', usuemail='$usuemail', usucel='$usucel' WHERE usucod = '$usucod';";
