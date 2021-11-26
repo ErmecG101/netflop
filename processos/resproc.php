@@ -6,13 +6,20 @@ include '../config/conexao.php';
 $rentit = filter_input(INPUT_POST, 'rentit');
 $rentex = filter_input(INPUT_POST, 'rentex');
 $rennot = filter_input(INPUT_POST, 'rennot');
-$codper = $_SESSION['percod'];
-$codcon = $_SESSION['concod'];
+
+if (isset($_SESSION['status'])) {
+    $codper = $_SESSION['perfil'];
+    $codcon = $_SESSION['conteudo'];
+} else {
+    $codper = $_SESSION['percod'];
+    $codcon = $_SESSION['concod'];
+}
 
 if (!$rentit || !$rentex || !$rennot || !$codper || !$codcon) {
     $_SESSION['status'] = 'erro_campos_vazios';
     header("Location: ../assistir.php?dircod=" . $_SESSION['dircod'] . "&&direp=" . $_SESSION['direp'] . "&&dirtemp=" . $_SESSION['dirtemp'] . "&&contit=" . $_SESSION['contit']);
 } else {
+    echo $_SESSION['status'];
     if (isset($_SESSION['status'])) {
         if (isset($_POST['btnsendres'])) {
             $update = "update resenhas set rentit = '$rentit', rentex ='$rentex'  where rencod = '" . $_SESSION['rencod'] . "'";
@@ -28,10 +35,12 @@ if (!$rentit || !$rentex || !$rennot || !$codper || !$codcon) {
         unset($_SESSION['rentex']);
         unset($_SESSION['rennot']);
         unset($_SESSION['status']);
+        unset($_SESSION['perfil']);
+        unset($_SESSION['conteudo']);
     } else {
         if ($_SESSION['percod']) {
             if ($_SESSION['rentit']) {
-                $update = "update resenhas set rentit = '$rentit', rennota = '$rennot' ,rentex ='$rentex'  where codper = '" . $_SESSION['percod'] . "'";
+                $update = "update resenhas set rentit = '$rentit', rennota = '$rennot' ,rentex ='$rentex'  where codper = '" . $_SESSION['percod'] . "' and codcon ='".$_SESSION['concod']."'";
                 $result = mysqli_query($connect, $update);
                 $_SESSION['status'] = 'atualizado';
                 header("Location: ../assistir.php?dircod=" . $_SESSION['dircod'] . "&&direp=" . $_SESSION['direp'] . "&&dirtemp=" . $_SESSION['dirtemp'] . "&&contit=" . $_SESSION['contit']);

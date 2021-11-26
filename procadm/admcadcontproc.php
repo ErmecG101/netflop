@@ -14,12 +14,19 @@ if (!$tit || !$dur || !$eps || !$sip || !$aut || !$notimdb || !$img || !$_FILES[
     header('Location: ../admcadcont.php');
 } else {
 
+    if(substr($tit, -1) == ' '){
+        $tit = substr_replace($tit, '', -1);
+    }
+
     if ((isset($_SESSION['acao'])) && ($_SESSION['acao'] == 'alt')) {
-        //Editar não esta atualizando a imagem enviada...
-        if ($_FILES['conimg']['name']) {
+        if ($_FILES['conimg']['tmp_name']) {
+            
             $uploaddir = 'C:\xampp\htdocs\netflop\dir/' . $tit . '/';
             $_FILES['conimg']['name'] = $tit . '.png';
             $uploadfile = $uploaddir . basename($_FILES['conimg']['name']);
+            if (!file_exists($uploaddir)) {
+                mkdir($uploaddir, 0777, true);
+            }
             if ((move_uploaded_file($_FILES['conimg']['tmp_name'], $uploadfile))) {
                 $_SESSION['status'] = 'sucesso';
                 $img = "dir/$tit/" . basename($_FILES['conimg']['name']);
@@ -33,7 +40,6 @@ if (!$tit || !$dur || !$eps || !$sip || !$aut || !$notimdb || !$img || !$_FILES[
         $result = mysqli_query($connect, $queryupdate);
         include "../processos/conttratcheck.php";
         header('Location: ../index.php');
-
     } else {
 
         $uploaddir = 'C:\xampp\htdocs\netflop\dir/' . $tit . '/';

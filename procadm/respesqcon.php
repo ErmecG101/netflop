@@ -34,8 +34,8 @@ $y = mysqli_num_rows($result);
                             <td><?php echo $ln['usunom'].'/'.$ln['pernom']?></td>
                             <td><button type="submit" value="<?php echo $ln['rencod'] ?>" class="btn btn-secondary" name="btnresvis">Visualizar</button>
                             </td>
-                            <input type="hidden" name="gencod" value="a">
-                            <input type="hidden" name="gennom" value="b">
+                            <input type="hidden" name="concod" value=" <?php echo $ln['concod']; ?>">
+                            <input type="hidden" name="percod" value=" <?php echo $ln['codper']; ?>">
                         </form>
                     </tr>
                 <?php

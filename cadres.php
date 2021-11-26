@@ -1,5 +1,4 @@
 <?php
-session_start();
 include "./config/conexao.php";
 include "./config/header.php";
 include "./config/menu.php";
@@ -9,7 +8,7 @@ include "./config/menu.php";
 <br><br>
 
 <body class="mainstyle">
-    <form class="mt-3 pt-3" method="POST" action="./processos/resproc.php">
+    <form id="formres" class="mt-3 pt-3" method="POST" action="./processos/resproc.php">
         <div class="container">
             <div class="row">
                 <div class="col-md-3"></div>
@@ -17,7 +16,7 @@ include "./config/menu.php";
                     <div class="row">
                         <div class="col-md-9">
                             <label>Titulo Resenha</label>
-                            <input type="text" value="<?php if(isset($_SESSION['rentit'])) {echo $_SESSION['rentit'];}?>" name="rentit" class="form-control" style="background: rgb(39, 45, 59);color: rgb(240, 240, 240);" placeholder="Resuma a sua opinião em breves palavras" maxlength="64">
+                            <input type="text" value="<?php if(isset($_SESSION['rentit'])) {echo $_SESSION['rentit'];}?>" id="restit" name="rentit" class="form-control" style="background: rgb(39, 45, 59);color: rgb(240, 240, 240);" placeholder="Resuma a sua opinião em breves palavras" maxlength="64">
                         </div>
                         <div class="col-md-3">
                             <label>Nota</label>
@@ -34,7 +33,7 @@ include "./config/menu.php";
                         <?php if(isset($_SESSION['status'])){
                             echo "<button name='btndelres' type='submit' class='btn btn-danger'>Deletar</button>";
                         }else{
-                            echo "<button type='submit' class='btn btn-danger'>Limpar Campos</button>";
+                            echo "<input type='button' class='btn btn-danger' onclick='javascript:clearAll()' value='Limpar Campos' >";
                             }?>
                     </div><br>
                 </div>
@@ -70,5 +69,15 @@ include "./config/menu.php";
         if(rentex.value.length>=500){
             rentexcounter.innerHTML = '('+rentex.value.length+'/512) - Espaço de escrita acabando!';
         }
+    }
+
+    function clearAll(){
+        restit = document.getElementById('restit');
+        edtnota = document.getElementById('edtnota');
+        rentex = document.getElementById('rentex');
+
+        restit.value='';
+        edtnota.value='';
+        rentex.value='';
     }
 </script>

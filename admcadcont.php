@@ -74,7 +74,7 @@ if(isset($_SESSION['status'])){
                         <div class="row">
                             <label>Nota IMDB</label>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" onkeyup="formatarNum(this)" maxlength="3" placeholder="IMDB" name="connotimdb" value="<?php if (isset($ln)) {
+                                <input type="text" class="form-control" onkeyup="notaIMDB(this)" maxlength="3" placeholder="IMDB" name="connotimdb" value="<?php if (isset($ln)) {
                                                                                                                         echo $ln['connotimdb'];
                                                                                                                     } ?>">
                             </div>
@@ -131,5 +131,21 @@ function formatarNum(obj){
         obj.value='';
     }  
 };
+
+function notaIMDB(obj){
+    formatarNum(obj);
+
+    if(obj.value > 10){
+        obj.value = '';
+    }else if(obj.value == 1){
+
+    }else if(obj.value < 10){
+        if(obj.value.length == 1){
+            if(event.keyCode !=8){
+                obj.value = obj.value+'.';
+            }
+        }
+    }
+}
 
 </script>

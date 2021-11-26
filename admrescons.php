@@ -1,9 +1,9 @@
 <?php
-session_start();
-include_once './procadm/admcheck.php';
 include "./config/header.php";
 include "./config/menu.php";
+include_once './procadm/admcheck.php';
 ?>
+
 <div class="container-fuild">
     <div class="row">
         <div class="col-md-1"></div>
