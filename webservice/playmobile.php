@@ -9,7 +9,10 @@ $query = "select * from diretorios where dircod = '$dircod';";
 $result = mysqli_query($connect,$query);
 $ln = mysqli_fetch_array($result);
 $dirtemp = $ln['dirtemp'];
-$direp = $ln['direp']
+$direp = $ln['direp'];
+
+echo $dircod;
+echo $contit;
 ?>
 <!DOCTYPE html>
 <html lang="pt">

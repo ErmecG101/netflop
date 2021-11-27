@@ -67,6 +67,7 @@ include 'config/conexao.php';
         <?php include 'processos/consultaperfil.php';?>
         <center><h4>Perfil:</h4>
         <div class="card-dark" style="background-color: rgb(45, 51, 70); width: 15rem;">
+        <br>
             <center><img src="<?php echo $lnpc['perpfp'] ?>" class="perfbigicon card-img-top" alt="..."></center>
             <div class="card-body">
                 <center>
@@ -85,7 +86,7 @@ include 'config/conexao.php';
                             <input readonly type="text" value="Criança" style="background-color: rgb(39, 45, 59); color: white;" class="form-control" aria-label="Input text com checkbox">
                         </div>
                         <br>
-                        <a href="perfils.php" value="" class="btn btn-secondary">Conferir Perfil</a>
+                        <a href="perfils.php" value="" class="btn btn-secondary">Conferir Perfil</a><br>
                     </ul>       
             </form>
         </div></center>

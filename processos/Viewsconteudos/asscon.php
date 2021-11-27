@@ -1,5 +1,5 @@
 <?php
-$select_diretorio = "select * from diretorios_de_conteudo where concod = '" . $concod . "' order by dirtemp";
+$select_diretorio = "select * from diretorios_de_conteudo where concod = '" . $concod . "' order by dirtemp asc, direp asc ";
 $result_diretorio = mysqli_query($connect, $select_diretorio);
 $a = 0;
 $b = mysqli_num_rows($result_diretorio);

@@ -28,9 +28,9 @@ $y = mysqli_num_rows($result);
                 ?>
                     <tr>
                         <form method="POST" action="./procadm/resolvedorres.php">
-                            <th scope="row"><?php echo $ln['concod']; ?></th>
+                            <th scope="row"><?php echo $ln['rencod']; ?></th>
                             <td><?php echo $ln['contit']?></td>
-                            <td><?php echo $ln['rennota'].'/10'?></td>
+                            <td><?php echo '0'.$ln['rennota'].'/10'?></td>
                             <td><?php echo $ln['usunom'].'/'.$ln['pernom']?></td>
                             <td><button type="submit" value="<?php echo $ln['rencod'] ?>" class="btn btn-secondary" name="btnresvis">Visualizar</button>
                             </td>
