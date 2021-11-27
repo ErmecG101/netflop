@@ -26,7 +26,7 @@ if (isset($_GET['pescontit'])) {
                 </li>
                 <?php if (isset($_SESSION['usunom'])) : ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="perfils.php">Perfils</a>
+                        <a class="nav-link" href="perfils.php">Perfil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="configuracoes.php">Configurações</a>
@@ -49,7 +49,7 @@ if (isset($_GET['pescontit'])) {
                     </li>
                 <?php else : ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="loginform.php">Logar-se</a>
+                        <a class="nav-link" href="loginform.php">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="accform.php">Cadastrar-se</a>
@@ -122,10 +122,10 @@ if (isset($_GET['pescontit'])) {
                 <li>
                     <div class="dropdown px-2 mr-5">
                         <button class="btn btn-link dropdown-toggle textstyle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Usuario
+                            Usuário
                         </button>
                         <div class="dropdown-menu mainstyle" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item textstyle" href="loginform.php">Logar-se</a>
+                            <a class="dropdown-item textstyle" href="loginform.php">Login</a>
                             <a class="dropdown-item textstyle" href="accform.php">Cadastrar-se</a>
                             <a class="dropdown-item textstyle" href="#">Sobre</a>
                         </div>

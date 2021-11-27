@@ -31,7 +31,7 @@ include_once './procadm/admcheck.php';
                 <h4>Cadastrar Gênero</h4><br>
                 <form method="POST" action="../netflop/procadm/admcadgenproc.php">
                 <input type="text" class="form-control" name="gennom" placeholder="Nome do Gênero" aria-label="Recipient's username" aria-describedby="button-addon2" 
-                <?php if((isset($_SESSION['acao']))&&($_SESSION['acao'] == 'editar')){
+                <?php if((isset($_SESSION['gennom']))){
                 echo "value=";echo $_SESSION['gennom']; unset($_SESSION['gennom']);} ?>>
                 <br>
                 <input type="submit" class="btn btn-primary" name="btncadgen">

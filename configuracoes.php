@@ -85,7 +85,7 @@ include 'config/conexao.php';
                             <input readonly type="text" value="Criança" style="background-color: rgb(39, 45, 59); color: white;" class="form-control" aria-label="Input text com checkbox">
                         </div>
                         <br>
-                        <a href="perfils.php" value="" class="btn btn-secondary">Conferir Perfils</a>
+                        <a href="perfils.php" value="" class="btn btn-secondary">Conferir Perfil</a>
                     </ul>       
             </form>
         </div></center>

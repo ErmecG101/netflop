@@ -4,7 +4,11 @@
 session_start();
 include '../config/conexao.php';
 
-$pernom = $_POST['pernom'];
+if(isset($_POST['pernom'])){
+    $pernom = $_POST['pernom'];
+}else{
+    $pernom = '';
+}
 
 if (isset($_POST['btnselper'])) { //SELEÇÃO
     $_SESSION['percod'] = $_POST['btnselper'];
@@ -59,6 +63,8 @@ if (isset($_POST['btnselper'])) { //SELEÇÃO
 } else if (isset($_POST['btndelper'])) { //DEL
 
     if (!($_POST['btndelper'] == $_SESSION['percod'])) {
+        $target = "../dir/perfil/".$_SESSION['usunom']."/".$_POST['btndelper'].".png";
+        unlink($target);
         $percod = $_POST['btndelper'];
         $querydelgost = "delete from gengost where codper = '$percod'";
         $resultdelgost = mysqli_query($connect, $querydelgost);

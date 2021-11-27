@@ -12,10 +12,11 @@ $img = "dir/$tit/$tit.png";
 if (!$tit || !$dur || !$eps || !$sip || !$aut || !$notimdb || !$img || !$_FILES['conimg']) {
     $_SESSION['status'] = 'camposvazios';
     header('Location: ../admcadcont.php');
+
 } else {
 
     if(substr($tit, -1) == ' '){
-        $tit = substr_replace($tit, '', -1);
+        $tit = substr_replace($tit, ' ', -1);
     }
 
     if ((isset($_SESSION['acao'])) && ($_SESSION['acao'] == 'alt')) {

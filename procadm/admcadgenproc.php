@@ -12,14 +12,17 @@ $numrowselect = mysqli_num_rows($resultselect);
 
 
 if ($_SESSION['acao'] == 'editar') {
-
-    $gencod = $_SESSION['gencod'];
-    $queryupdate = "update generos set gennom='$gennom' where gencod = '$gencod'";
-    $_SESSION['genero'] = 'editado';
-    $resultupdate = mysqli_query($connect, $queryupdate);
-    unset($_SESSION['acao']);
-    header("Location: ../admcadgen.php");
-
+    if (!$gennom) {
+        $_SESSION['genero'] = 'campo-vazio';
+        header("Location: ../admcadgen.php");
+    } else {
+        $gencod = $_SESSION['gencod'];
+        $queryupdate = "update generos set gennom='$gennom' where gencod = '$gencod'";
+        $_SESSION['genero'] = 'editado';
+        $resultupdate = mysqli_query($connect, $queryupdate);
+        unset($_SESSION['acao']);
+        header("Location: ../admcadgen.php");
+    }
 } else {
     if (empty($numrowselect) == false) {
         //existe um registro já com o nome
@@ -27,7 +30,7 @@ if ($_SESSION['acao'] == 'editar') {
         $_SESSION['genero'] = 'já-existe';
         $_SESSION['gencod'] = $ln['gencod'];
         header("Location: ../admcadgen.php");
-    } else if(empty($gennom)){
+    } else if (empty($gennom)) {
         $_SESSION['genero'] = 'campo-vazio';
         header("Location: ../admcadgen.php");
     } else {

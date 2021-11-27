@@ -36,7 +36,7 @@ function popupClosePer() {
 }
 
 function tratarSQLInjec(value ,callback){
-    var regex = /^([a-z]|[A-Z]|[0-9]|[ ])*$/g;
+    var regex = /^([a-z]|[A-Z]|[0-9]|[ - ]|[á-ú]|[à-ú]|[â-û]*[\p{L}\s])+$/g;
     if(regex.exec(value)){
         callback();
     }else{
@@ -46,7 +46,7 @@ function tratarSQLInjec(value ,callback){
 
 function pesqStart(){
     var contit = document.getElementById('pesqTex');
-    var regex = /^([a-z]|[A-Z]|[0-9])*$/g;
+    var regex = /^([a-z]|[A-Z]|[0-9]|[ - ]|[á-ú]|[à-ú]|[â-û]*[\p{L}\s])+$/g;
     if(regex.exec(contit.value)){
         console.log(contit.value);
         document.location = 'pesqcon.php?pescontit='+contit.value;
