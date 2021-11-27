@@ -17,7 +17,7 @@
 	}
 	
 	$queryi = "INSERT INTO usuarios(usunom,ususen,usuemail,usucel)VALUES('$usunom',md5('$ususen'),'$usuemail','$usucel');";
-	$queryu = "UPDATE usuarios SET usunom='$usunom', ususen='$ususen', usuemail='$usuemail', usucel='$usucel' WHERE usucod = '$usucod';";
+	$queryu = "UPDATE usuarios SET usunom='$usunom', ususen=md5('$ususen'), usuemail='$usuemail', usucel='$usucel' WHERE usucod = '$usucod';";
 	$queryd = "DELETE FROM gengost WHERE codper='$percod'; DELETE FROM resenhas WHERE codper = '$percod';
 	DELETE FROM perfil WHERE codusu='$usucod'; DELETE FROM usuarios WHERE usucod='$usucod';";
 	$querys = "SELECT * FROM usuarios";

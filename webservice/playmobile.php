@@ -17,9 +17,10 @@ $direp = $ln['direp']
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
 </head>
-<body>
+<body class="mainstyle">
 <video autoplay width="100%" height="100%" controls> 
     <source src="<?php echo '../'.$ln['dirdir'] ?>" type="video/mp4">
     <!--<source src = "1.mp4" type="video/mp4">-->
