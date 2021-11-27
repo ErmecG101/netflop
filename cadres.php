@@ -20,7 +20,7 @@ include "./config/menu.php";
                         </div>
                         <div class="col-md-3">
                             <label>Nota</label>
-                            <input type="text" onsubmit="formatNot()" value="<?php if(isset($_SESSION['rennot'])) {echo $_SESSION['rennot'];}?>" <?php if(isset($_SESSION['status'])){ echo "readonly"; }?> name="rennot" id="edtnota" class="form-control" style="background: rgb(39, 45, 59);color: rgb(240, 240, 240);"placeholder="X/10" onblur="formatNot()" maxlength="2">
+                            <input type="text" onkeyup="formatNot(this)" value="<?php if(isset($_SESSION['rennot'])) {echo $_SESSION['rennot'];}?>" <?php if(isset($_SESSION['status'])){ echo "readonly"; }?> name="rennot" id="edtnota" class="form-control" style="background: rgb(39, 45, 59);color: rgb(240, 240, 240);"placeholder="X/10" maxlength="2">
                         </div>
                     </div><br>
                     <div class="row">
@@ -49,7 +49,27 @@ include "./config/menu.php";
     var notaRes = document.getElementById('edtnota');
     document.getElementById('rentexcounter').innerHTML = '('+document.getElementById('rentex').value.length+'/512)';
 
-    function formatNot() {
+    function formatarNum(obj){
+    if (obj.value.toLowerCase() != obj.value.toUpperCase()){
+        obj.value='';
+    }  
+};
+    function formatNot(obj){
+        formatarNum(obj);
+        if(obj.value > 10){
+        obj.value = '';
+    }else if(obj.value == 1){
+
+    }else if(obj.value < 10){
+        if(obj.value.length == 1){
+            if(event.keyCode !=8){
+                obj.value = 0+obj.value;
+            }
+        }
+    }
+}
+
+    function formatNot_old() {
         if (notaRes.value > 10) {
             notaRes.value = '';
         } else if (notaRes.value <= 9) {
