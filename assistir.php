@@ -43,7 +43,7 @@ include './processos/epverify.php';
                         <th scope="col" class="col-md-1"><button class="btn btn-link" id="vidbutton"><img id="playPauseIMG" src="./img/IconesPlayer/botao_pause.png" class="controlicon"></button></th>
                         <th scope="col" class="col-md-1"><button class="btn btn-link" onclick=javascript:watchNext(<?php echo $dircod.",".$dirtemp. ","."'".$_GET['contit']."'" ?>) <?php if(isset($_SESSION['prox'])){ echo 'disabled'; unset($_SESSION['prox']); } ?> id=""><img src="./img/IconesPlayer/botao_ep_proximo.png" class="controlicon"></button></th>
                         <th scope="col" class="col-md-7"><button class="btn btn-link" id="mute"> <img id="muteButtonIMG" src="./img/IconesPlayer/botao_volume_baixo.png" class="controlicon"> </button><input id="vol-control" type="range" class="form-range" min="0" max="100" step="1" oninput="thisVolume(this.value)" style="width: 120px; height: 10px;"></th>
-                        <th scope="col" class="col-md-1"><label id="timerText" style="background-color: #212529; color: white;" class="form-control">00:00</label></th>
+                        <th scope="col" class="col-md-1"><center><label id="timerText" style="background-color: #212529; color: white;" class="form-control">00:00</label></center></th>
                         <input type="hidden" id="vol">
                         <th scope="col" class="col-md-1"><button id="btnfullscreen" class="btn btn-link"><img src="./img/IconesPlayer/botao_tela_cheia.png" class="controlicon"></button></th>
                     </tr>
