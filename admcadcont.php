@@ -48,7 +48,7 @@ if(isset($_SESSION['status'])){
                 <div class="row">
                     <label>Banner do Filme</label>
                     <div class="input-group mb-3">
-                        <input type="file" name="conimg" class="form-control fileinput">
+                        <input type="file" accept=".png,.jpg,.jpeg" name="conimg" class="form-control fileinput">
                     </div>
                 </div>
                 <div class="row">

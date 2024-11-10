@@ -28,7 +28,7 @@
                             <input readonly type="text" value="Criança" style="background-color: rgb(39, 45, 59); color: white;" class="form-control" aria-label="Input text com checkbox">
                         </div>
                         <input type="text" value="<?php echo $ln['pernom'] ?>" name="pernom" placeholder="Nome Perfil" class="form-group">
-                        <input type="file" name="perpfp" class="form-control fileinput" style="width: 13.5rem;">
+                        <input type="file" accept=".png,.jpeg,.jpg" name="perpfp" class="form-control fileinput" style="width: 13.5rem;">
                         <br>
                         <button name="btnfinedit" value="<?php echo $ln['percod'] ?>" type="submit" class="btn btn-secondary">Atualizar</button>
                     </ul>

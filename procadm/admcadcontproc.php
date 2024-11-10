@@ -22,7 +22,7 @@ if (!$tit || !$dur || !$eps || !$sip || !$aut || !$notimdb || !$img || !$_FILES[
     if ((isset($_SESSION['acao'])) && ($_SESSION['acao'] == 'alt')) {
         if ($_FILES['conimg']['tmp_name']) {
             
-            $uploaddir = 'C:\xampp\htdocs\netflop\dir/' . $tit . '/';
+            $uploaddir = '..\dir/' . $tit . '/';
             $_FILES['conimg']['name'] = $tit . '.png';
             $uploadfile = $uploaddir . basename($_FILES['conimg']['name']);
             if (!file_exists($uploaddir)) {
@@ -43,7 +43,7 @@ if (!$tit || !$dur || !$eps || !$sip || !$aut || !$notimdb || !$img || !$_FILES[
         header('Location: ../index.php');
     } else {
 
-        $uploaddir = 'C:\xampp\htdocs\netflop\dir/' . $tit . '/';
+        $uploaddir = '..\dir/' . $tit . '/';
         $_FILES['conimg']['name'] = $tit . '.png';
         $uploadfile = $uploaddir . basename($_FILES['conimg']['name']);
         if (!file_exists($uploaddir)) {

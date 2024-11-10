@@ -52,7 +52,7 @@ if (!$_GET) {
                 </div>
                 <label>Diretório: </label>
                 <div class="input-group mb-3">
-                    <input type="file" class="form-control fileinput" name="dirdir">
+                    <input type="file" class="form-control fileinput" accept=".mp4,.mkv,.avi" name="dirdir">
                 </div>
                 
                 <div class="input-group mb-3">
