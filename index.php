@@ -63,7 +63,7 @@ if ($_GET) {
             <div id="carouselExampleControls1" data-interval="false" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="container-fluid  ml-3 mr-3">
-                        <?php include './processos/Viewsconteudos/congenerico.php' ?>
+                        <?php include './processos/viewsconteudos/congenerico.php' ?>
                     </div>
                 </div>
                 <a class="carousel-control-prev"  style="width: 10%;" href="#carouselExampleControls1" role="button" data-slide="prev">
@@ -82,7 +82,7 @@ if ($_GET) {
                 <div class="carousel-inner">
                     <div class="container-fluid  ml-3 mr-3">
                         <?php if (isset($_SESSION['percod'])) {
-                            include './processos/Viewsconteudos/congost.php';
+                            include './processos/viewsconteudos/congost.php';
                         } else {
                         ?>
                             <div class="carousel-item active">

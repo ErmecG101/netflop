@@ -9,7 +9,7 @@ include './config/menu.php';
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class="row">
-                <?php include './processos/Viewsconteudos/pesqconproc.php' ?>
+                <?php include './processos/viewsconteudos/pesqconproc.php' ?>
             </div>
         </div>
     </div>
