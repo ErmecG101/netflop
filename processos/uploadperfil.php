@@ -1,6 +1,6 @@
 <?php
 
-$uploaddir = '..\dir/perfil/' . $_SESSION['usunom'] . '/';
+$uploaddir = '../dir/perfil/' . $_SESSION['usunom'] . '/';
 
     $uploadfile = $uploaddir . basename($_FILES['perpfp']['name']);
     if (!file_exists($uploaddir)) {

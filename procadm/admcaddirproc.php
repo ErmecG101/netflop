@@ -10,7 +10,7 @@ if (isset($_POST['codcon'])) {
 }
 
 $contit = $_POST['codconview'];
-$uploaddir = '..\dir/' . $contit . '/';
+$uploaddir = '../dir/' . $contit . '/';
 $dirtemp = filter_input(INPUT_POST, 'dirtemp');
 $direp = filter_input(INPUT_POST, 'direp');
 $_FILES['dirdir']['name'] = $direp . '.mp4';
@@ -27,7 +27,7 @@ if (!$contit || !$_FILES['dirdir']['tmp_name'] || !$direp || !$dirtemp) {
     if (!file_exists($uploaddir . $dirtemp)) {
         mkdir($uploaddir . $dirtemp, 0777, true);
     }
-    if (file_exists('..\dir/' . $contit . '/' . $dirtemp . '/' . $direp . '.mp4')) {
+    if (file_exists('../dir/' . $contit . '/' . $dirtemp . '/' . $direp . '.mp4')) {
         $_SESSION['diretorio'] = 'existe';
         header("Location: admcaddir.php");
     }
